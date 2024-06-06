@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  python_service:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile-python
+    volumes:
+      - ./scripts/python:/app
+
+  node_service:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile-node
+    volumes:
+      - ./scripts/node:/app
+
+  go_service:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile-go
+    volumes:
+      - ./scripts/go:/app
+
+  r_service:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile-r
+    volumes:
+      - ./scripts/r:/app

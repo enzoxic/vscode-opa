@@ -1,0 +1,6 @@
+FROM rocker/r-ver:4.1.0
+WORKDIR /app
+COPY config/r/dependencies.R .
+RUN Rscript dependencies.R
+COPY scripts/r/ .
+CMD ["Rscript", "script1.R"]

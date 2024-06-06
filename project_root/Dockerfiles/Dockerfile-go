@@ -1,0 +1,7 @@
+FROM golang:1.18
+WORKDIR /app
+COPY config/go/go.mod .
+RUN go mod tidy
+COPY scripts/go/ .
+RUN go build -o main .
+CMD ["./main"]
